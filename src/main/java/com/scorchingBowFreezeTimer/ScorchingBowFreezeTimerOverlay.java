@@ -1,13 +1,13 @@
-package com.scorchingBowSATimer;
+package com.scorchingBowFreezeTimer;
 
 import net.runelite.client.ui.overlay.infobox.Counter;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class ScorchingBowSATimerOverlay extends Counter {
+public class ScorchingBowFreezeTimerOverlay extends Counter {
 
-	public ScorchingBowSATimerOverlay(BufferedImage image, scorchingBowSATimerPlugin plugin, int setCount) {
+	public ScorchingBowFreezeTimerOverlay(BufferedImage image, scorchingBowFreezeTimerPlugin plugin, int setCount) {
 		super(image, plugin, setCount);
 	}
 

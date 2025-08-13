@@ -1,14 +1,11 @@
-package com.scorchingBowSATimer;
+package com.scorchingBowFreezeTimer;
 
-import com.google.inject.Provides;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.*;
-import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.events.VarbitChanged;
 import net.runelite.api.gameval.InventoryID;
-import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.plugins.Plugin;
@@ -17,9 +14,9 @@ import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Scorching Bow SA Timer"
+	name = "Scorching Bow Freeze Timer"
 )
-public class scorchingBowSATimerPlugin extends Plugin
+public class scorchingBowFreezeTimerPlugin extends Plugin
 {
 	@Inject
 	private Client client;
@@ -33,7 +30,7 @@ public class scorchingBowSATimerPlugin extends Plugin
 	private boolean bowSAUsed = false;
 	int bindDuration;
 	float shortTimer; //A short timer that will remove the overlay after 20 seconds
-	ScorchingBowSATimerOverlay counter;
+	ScorchingBowFreezeTimerOverlay counter;
 
 	@Override
 	protected void startUp() throws Exception
@@ -50,7 +47,7 @@ public class scorchingBowSATimerPlugin extends Plugin
 	private void updateCounter() {
 		if (counter == null)
 		{
-			counter = new ScorchingBowSATimerOverlay(itemManager.getImage(29591), this, bindDuration);
+			counter = new ScorchingBowFreezeTimerOverlay(itemManager.getImage(29591), this, bindDuration);
 			infoBoxManager.addInfoBox(counter);
 		}
 		else

@@ -1,13 +1,13 @@
-package com.scorchingBowSATimer;
+package com.scorchingBowFreezeTimer;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class scorchingBowSATimerPluginTest
+public class scorchingBowFreezeTimerPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(scorchingBowSATimerPlugin.class);
+		ExternalPluginManager.loadBuiltin(scorchingBowFreezeTimerPlugin.class);
 		RuneLite.main(args);
 	}
 }
